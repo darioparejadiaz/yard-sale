@@ -18,14 +18,12 @@
 
 body{
     font-family: 'Quicksand', sans-serif;
+    height: 100vh;
 }
 
 .mobile-menu{
-    /* width: fit-content; */
-    /* max-width: 300px; */
-    height: 100vh;
+    height: 100%;
     padding: 24px;
-    border: 1px solid var(--very-light-pink);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -33,19 +31,6 @@ body{
 
 .mobile-menu ul{
     list-style: none;
-    /* margin-top: 24px; */
-}
-
-/* .mobile-menu ul:nth-child(1){
-    border-bottom: 1px solid var(--very-light-pink);
-} */
-
-.mobile-menu .division-line{
-    border-bottom: 1px solid var(--very-light-pink);
-}
-
-.mobile-menu ul li{
-    margin-bottom: 34px;
 }
 
 .mobile-menu a{
@@ -53,6 +38,22 @@ body{
     color: var(--black);
     font-weight: bold;
     font-size: var(--md);
+}
+
+.mobile-menu ul li{
+    margin-bottom: 34px;
+}
+
+.mobile-menu .upper-list li:last-child{
+    margin-bottom: 0;
+}
+
+.mobile-menu .division-line{
+    border-bottom: 1px solid var(--very-light-pink);
+}
+
+.mobile-menu .middle-list li:last-child{
+    margin-bottom: 0;
 }
 
 .mobile-menu .email{
@@ -68,4 +69,22 @@ body{
 
 .mobile-menu .bottom-list li{
     margin: 0;
+}
+
+@media (min-width: 640px){
+    body{
+        height: 100%;
+    }
+
+    .mobile-menu .upper-list{
+        margin-bottom: 24px;
+    }
+
+    .mobile-menu .middle-list{
+        margin-top: 24px;
+    }
+
+    .mobile-menu .bottom-list{
+        margin-top: 24px;
+    }
 }
