@@ -20,6 +20,8 @@ body{
     font-family: 'Quicksand', sans-serif;
 }
 
+/* ******************************************Nav bar****************************************** */
+
 nav{
     display: flex;
     width: 100%;
@@ -108,6 +110,8 @@ nav{
     justify-content: center;
     align-items: center;
 }
+
+/* **************************************************end nav bar********************************************* */
 
 .main-container{
     padding-bottom: 24px;
