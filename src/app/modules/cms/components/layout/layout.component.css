@@ -1,0 +1,77 @@
+/* ******************************************************************** */
+/* ******************************************************************** */
+/* ******************************************************************** */
+/* Header */
+
+.header {
+  padding: 16px 18px;
+  background-color: var(--blue);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ******************* */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* ******************* */
+
+.logo {
+  margin-right: 8px;
+}
+
+/* ******************************************************************** */
+/* ******************************************************************** */
+/* ******************************************************************** */
+/* Grid container */
+
+.grid-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+/* ************************************** */
+/* ************************************** */
+/* Nav menu */
+
+.nav-menu {
+  border-right: 1px solid var(--very-light-pink);
+}
+
+.nav-menu ul {
+  display: grid;
+  justify-items: center;
+}
+
+.nav-menu ul li,
+.nav-menu ul li a {
+  display: block;
+  width: 100%;
+}
+
+.nav-menu ul li a {
+  padding: 24px 0;
+  text-align: center;
+}
+
+.active-link {
+  background-color: var(--blue);
+}
+
+/* ************************************** */
+/* ************************************** */
+/* Main - Router Outlet */
+
+main {
+  background-color: var(--text-input-field);
+}
+
+/* ******************************************************************** */
+/* ******************************************************************** */
+/* ******************************************************************** */

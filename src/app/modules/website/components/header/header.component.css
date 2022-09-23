@@ -1,0 +1,213 @@
+/* ******************************************************************* */
+/* ******************************************************************* */
+/* ******************************************************************* */
+/* Commons */
+
+.header-container {
+  width: 100%;
+  padding: 16px 18px;
+  background-color: var(--white);
+
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* *********************** */
+
+.cart-container {
+  position: relative;
+}
+
+/* *********************** */
+
+.products-counter {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--hospital-green);
+
+  display: grid;
+  place-items: center;
+
+  position: absolute;
+  right: -10px;
+  top: -10px;
+}
+
+/* ******************************************************************* */
+/* ******************************************************************* */
+/* ******************************************************************* */
+/* Mobile header */
+
+.mobile-grid-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-menu-icon {
+  cursor: pointer;
+}
+
+.mobile-logo-icon {
+  cursor: pointer;
+}
+
+/* ******************************************************************* */
+/* ******************************************************************* */
+/* ******************************************************************* */
+/* Side menu */
+
+.side-menu {
+  padding: 24px 24px 8px 24px;
+  background-color: white;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  transform: translateX(-100%);
+  transition: all ease-out 0.5s;
+}
+
+/* *********************** */
+
+.active-menu {
+  transform: translateX(0);
+}
+
+/* *********************** */
+
+.close-icon-container {
+  display: grid;
+  justify-items: end;
+  cursor: pointer;
+}
+
+/* *********************** */
+
+.category-title {
+  margin-bottom: 24px;
+}
+
+/* *********************** */
+
+.links-container {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* *********************** */
+
+.links {
+  display: grid;
+  gap: 56px;
+}
+
+/* *********************** */
+
+.category-list li,
+.loged-links li {
+  margin-bottom: 12px;
+}
+
+/* ******************************************************************* */
+/* ******************************************************************* */
+/* ******************************************************************* */
+/* Desktop header */
+
+.desktop-grid-container {
+  display: none;
+}
+
+/* *********************** */
+
+.desktop-menu-container {
+  display: flex;
+  align-items: center;
+}
+
+/* *********************** */
+
+.desktop-logo-icon {
+  width: 144px;
+  margin-right: 52px;
+  cursor: pointer;
+}
+
+/* *********************** */
+
+.desktop-nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+/* *********************** */
+
+.desktop-nav-menu li a {
+  padding: 5px 14px;
+  border-radius: 10px;
+}
+
+/* *********************** */
+
+.desktop-nav-menu li:hover {
+  cursor: pointer;
+}
+
+/* *********************** */
+
+.active-link {
+  color: var(--hospital-green);
+  box-shadow: 0px 0px 0px 1px var(--hospital-green) inset;
+}
+
+/* *********************** */
+
+.desktop-cart-container {
+  display: flex;
+  align-items: center;
+}
+
+/* *********************** */
+
+.sign-in-link {
+  color: var(--hospital-green);
+  cursor: pointer;
+
+  margin-right: 8px;
+}
+
+/* ******************************************************************* */
+/* ******************************************************************* */
+/* ******************************************************************* */
+/* Media queries */
+
+/* ******************************************* */
+/* ******************************************* */
+/* Tablet range 600px - 1200px */
+
+@media screen and (min-width: 900px) {
+  .header-container {
+    padding: 16px 52px;
+  }
+
+  /* *********************** */
+
+  .mobile-grid-container {
+    display: none;
+  }
+
+  /* *********************** */
+
+  .desktop-grid-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

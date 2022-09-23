@@ -1,0 +1,10 @@
+.dummy-header {
+  width: 100%;
+  height: 61px;
+}
+
+@media screen and (min-width: 900px) {
+  .dummy-header {
+    height: 65.69px;
+  }
+}

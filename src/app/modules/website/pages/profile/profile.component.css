@@ -1,0 +1,6 @@
+.btn-container {
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}

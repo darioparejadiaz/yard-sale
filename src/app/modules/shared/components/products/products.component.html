@@ -1,0 +1,40 @@
+<div class="products-component-container" *ngIf="products.length !== 0">
+  <!-- ************************************************************************************** -->
+  <!-- ************************************************************************************** -->
+  <!-- ************************************************************************************** -->
+  <!-- Create Product -->
+
+  <!-- <div class="create-container">
+  <button class="create btn btn-primary large-body" (click)="createProduct()">
+    Create Product
+  </button>
+</div> -->
+
+  <!-- ************************************************************************************** -->
+  <!-- ************************************************************************************** -->
+  <!-- ************************************************************************************** -->
+  <!-- Products grid -->
+
+  <div class="products-grid limits">
+    <app-product
+      *ngFor="let product of products"
+      [product]="product"
+      (addedProduct)="addProductToShoppingList($event)"
+      (removedProduct)="removeProductToShoppingList($event)"
+    ></app-product>
+  </div>
+
+  <!-- ************************************************************************************** -->
+  <!-- ************************************************************************************** -->
+  <!-- ************************************************************************************** -->
+  <!-- Show More products -->
+
+  <div class="show-container">
+    <button
+      class="show btn btn-primary large-body"
+      (click)="showMoreProducts()"
+    >
+      Show more products
+    </button>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+<!-- ************************************************************************************** -->
+<!-- ************************************************************************************** -->
+<!-- ************************************************************************************** -->
+
+<div *ngIf="product" class="product-page-container limits">
+  <!-- ******************************************** -->
+  <!-- ******************************************** -->
+  <!-- Close Icon -->
+
+  <img
+    class="close-icon"
+    src="../../../assets/icons/flechita.svg"
+    (click)="closeProductDetail()"
+  />
+
+  <!-- ******************************************** -->
+  <!-- ******************************************** -->
+  <!-- Product detail -->
+
+  <div class="product-detail">
+    <!-- ******************************************** -->
+    <!-- ******************************************** -->
+    <!-- Product Image -->
+
+    <div class="img-container">
+      <app-img
+        [imageChange]="product.images[0]"
+        [isDetailImage]="true"
+      ></app-img>
+    </div>
+
+    <!-- ******************************************** -->
+    <!-- ******************************************** -->
+    <!-- Info container -->
+
+    <div class="info-container">
+      <!-- ************************ -->
+
+      <h4 class="price medium-price">
+        {{ product.price | currency: "USD" }}
+      </h4>
+
+      <!-- ************************ -->
+
+      <p class="title medium-body">{{ product.title }}</p>
+
+      <!-- ************************ -->
+
+      <p class="description medium-body">
+        {{ product.description }}
+      </p>
+
+      <!-- ************************ -->
+      <!-- ************************ -->
+
+      <button
+        *ngIf="!isProductAddedToShoppingList(); else removeBtn"
+        class="btn btn-primary large-body"
+        (click)="addProductToShoppingList(product)"
+      >
+        <img src="../../../assets/icons/icon_shopping_cart.svg" /> Add to cart
+      </button>
+
+      <ng-template #removeBtn>
+        <button
+          class="btn btn-secondary large-body"
+          (click)="removeProductToShoppingList(product)"
+        >
+          Remove product
+        </button>
+      </ng-template>
+
+      <!-- ************************ -->
+      <!-- ************************ -->
+      <!-- ************************ -->
+      <!-- Update Product -->
+
+      <!-- <button
+        class="update btn btn-primary large-body"
+        (click)="updateProduct()"
+      >
+        Update Product
+      </button> -->
+
+      <!-- ************************ -->
+      <!-- ************************ -->
+      <!-- ************************ -->
+      <!-- Delete Product -->
+
+      <!-- <button
+        class="delete btn btn-primary large-body"
+        (click)="deleteProduct()"
+      >
+        Delete Product
+      </button>
+    </div> -->
+      <!-- ******************************************** -->
+      <!-- ******************************************** -->
+    </div>
+  </div>
+</div>

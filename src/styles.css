@@ -1,0 +1,276 @@
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* Imports */
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* Variables */
+
+:root {
+  /* ********************************************** */
+  /* ********************************************** */
+  /* Colors */
+
+  --hospital-green: #acd9b2;
+  --hospital-green-shade: #3a6b41;
+  --very-light-pink: #c7c7c7;
+  --text-input-field: #f7f7f7;
+  --white: #ffffff;
+  --black: #000000;
+  --dark: #232830;
+
+  --blue: #52adcc;
+
+  /* ********************************************** */
+  /* ********************************************** */
+  /* Font sizes */
+
+  --large-font-size: 18px;
+  --medium-font-size: 16px;
+  --small-font-size: 14px;
+}
+
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* General */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ************************************ */
+
+a {
+  text-decoration: none;
+}
+
+/* ************************************ */
+
+a:visited {
+  color: black;
+}
+
+/* ************************************ */
+
+ul {
+  list-style: none;
+}
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* Font families and sizes */
+
+/* ************************************ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", sans-serif;
+  font-size: var(--large-font-size);
+}
+
+/* ************************************ */
+
+p,
+a,
+li,
+span {
+  font-family: "Roboto", sans-serif;
+  font-size: var(--medium-font-size);
+}
+
+/* ********************************************** */
+/* ********************************************** */
+/* Large Font sizes */
+
+.large-title {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: var(--large-font-size);
+  color: var(--dark);
+}
+
+/* ************************************ */
+
+.large-body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  font-size: var(--large-font-size);
+  color: var(--very-light-pink);
+}
+
+/* ************************************ */
+
+.large-price {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: var(--large-font-size);
+  color: var(--dark);
+}
+
+/* ********************************************** */
+/* ********************************************** */
+/* Medium Font sizes */
+
+.medium-title {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: var(--medium-font-size);
+  color: var(--dark);
+}
+
+/* ************************************ */
+
+.medium-body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  font-size: var(--medium-font-size);
+  color: var(--very-light-pink);
+}
+
+/* ************************************ */
+
+.medium-price {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: var(--medium-font-size);
+  color: var(--dark);
+}
+
+/* ********************************************** */
+/* ********************************************** */
+/* Small Font sizes */
+
+.small-title {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: var(--small-font-size);
+  color: var(--dark);
+}
+
+/* ************************************ */
+
+.small-body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  font-size: var(--small-font-size);
+  color: var(--very-light-pink);
+}
+
+/* ************************************ */
+
+.small-price {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: var(--small-font-size);
+  color: var(--dark);
+}
+
+/* ********************************************** */
+/* ********************************************** */
+/* Layout limits */
+
+.limits {
+  min-width: 320px;
+  max-width: 1464px;
+  margin: 0 auto;
+}
+
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* Buttons */
+
+.btn {
+  width: 100%;
+  max-width: 900px;
+  padding: 24px 0;
+  border-radius: 10px;
+  border-width: 0;
+}
+
+/* ************************ */
+
+.btn:hover {
+  cursor: pointer;
+}
+
+/* ************************ */
+
+.btn-primary {
+  background-color: var(--hospital-green);
+  color: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ************************ */
+
+.btn-primary img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg)
+    brightness(102%) contrast(102%);
+  margin-right: 12px;
+}
+
+/* ************************ */
+
+.btn-primary:active {
+  background-color: var(--hospital-green-shade);
+}
+
+/* ************************ */
+
+.btn-secondary {
+  background-color: var(--text-input-field);
+  color: var(--hospital-green);
+}
+
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* Paddings */
+
+.full-padding {
+  padding: 18px;
+}
+
+/* ************************ */
+
+.vertical-padding {
+  padding: 18px 0;
+}
+
+/* ************************ */
+
+.horizontal-padding {
+  padding: 0 18px;
+}
+
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* ****************************************************************************** */
+/* Media queries */
+
+@media screen and (min-width: 900px) {
+  .full-padding {
+    padding: 18px 52px;
+  }
+
+  /* ************************ */
+
+  .horizontal-padding {
+    padding: 0 52px;
+  }
+}

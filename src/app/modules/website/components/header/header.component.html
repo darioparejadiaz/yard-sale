@@ -1,0 +1,190 @@
+<!-- ****************************************************************** -->
+<!-- ****************************************************************** -->
+<!-- ****************************************************************** -->
+<!-- Modile header -->
+
+<header class="header-container mobile-grid-container limits">
+  <!-- ************************************ -->
+
+  <img
+    class="mobile-menu-icon"
+    src="../../../assets/icons/icon_menu.svg"
+    alt=""
+    (click)="toggleVisibility()"
+  />
+
+  <!-- ************************************ -->
+
+  <a routerLink="/home">
+    <img
+      class="mobile-logo-icon"
+      src="../../../assets/logos/logo_yard_sale.svg"
+      alt=""
+    />
+  </a>
+
+  <!-- ************************************ -->
+
+  <div class="cart-container">
+    <a routerLink="/cart">
+      <div *ngIf="isProductOnCart()" class="products-counter small-price">
+        {{ getTotalProducts() }}
+      </div>
+      <img
+        class="mobile-cart-icon"
+        src="../../../assets/icons/icon_shopping_cart.svg"
+        alt=""
+      />
+    </a>
+  </div>
+
+  <!-- ************************************ -->
+</header>
+
+<!-- ****************************************************************** -->
+<!-- ****************************************************************** -->
+<!-- ****************************************************************** -->
+<!-- Side menu -->
+
+<div class="side-menu" [class.active-menu]="isVisible">
+  <!-- ************************************ -->
+
+  <div class="close-icon-container">
+    <img
+      src="../../../assets/icons/icon_close.png"
+      (click)="toggleVisibility()"
+    />
+  </div>
+
+  <!-- ************************************ -->
+  <h2 class="category-title">CATEGORIES</h2>
+  <div class="links-container">
+    <!-- ************************************ -->
+    <!-- ************************************ -->
+    <!-- Navigation Links -->
+
+    <div class="links">
+      <nav>
+        <ul class="category-list">
+          <li><a routerLink="/home" (click)="toggleVisibility()">All</a></li>
+          <li *ngFor="let category of categories">
+            <a
+              [routerLink]="['category/', category.id]"
+              (click)="toggleVisibility()"
+              >{{ category.name }}</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ************************************ -->
+      <!-- Profile options -->
+
+      <nav *ngIf="user" class="loged-links">
+        <ul>
+          <li>
+            <a routerLink="/cart" (click)="toggleVisibility()">My orders</a>
+          </li>
+          <li>
+            <a routerLink="/profile" (click)="toggleVisibility()">My account</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- ************************************ -->
+    <!-- Login buttons -->
+
+    <div class="login-options-links">
+      <button
+        *ngIf="!user; else logoutBtn"
+        class="btn btn-secondary"
+        (click)="toggleVisibility()"
+        routerLink="/register"
+      >
+        Log in
+      </button>
+      <ng-template #logoutBtn>
+        <p class="small-body">{{ user?.email }}</p>
+        <button
+          class="btn btn-secondary"
+          (click)="toggleVisibility()"
+          (click)="logOut()"
+          routerLink="/home"
+        >
+          Log out
+        </button>
+      </ng-template>
+    </div>
+  </div>
+
+  <!-- ************************************ -->
+</div>
+
+<!-- ****************************************************************** -->
+<!-- ****************************************************************** -->
+<!-- ****************************************************************** -->
+<!-- Desktop header -->
+
+<header class="header-container desktop-grid-container limits">
+  <!-- ************************************ -->
+  <!-- ************************************ -->
+  <!-- Logo icon -->
+
+  <div class="desktop-menu-container">
+    <a routerLink="/home">
+      <img
+        class="desktop-logo-icon"
+        src="../../../assets/logos/logo_yard_sale.svg"
+        alt=""
+      />
+    </a>
+
+    <!-- ************************************ -->
+    <!-- Nav menu -->
+
+    <nav>
+      <ul class="desktop-nav-menu">
+        <li><a routerLinkActive="active-link" routerLink="/home">All</a></li>
+        <li *ngFor="let category of categories">
+          <a
+            routerLinkActive="active-link"
+            [routerLink]="['category/', category.id]"
+            >{{ category.name }}</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ************************************ -->
+  </div>
+
+  <!-- ************************************ -->
+  <!-- ************************************ -->
+
+  <div class="desktop-cart-container">
+    <!-- Login -->
+    <a *ngIf="!user; else userName" class="sign-in-link" routerLink="register"
+      >Sign In</a
+    >
+    <ng-template #userName>
+      <a class="sign-in-link" routerLink="profile">{{ user?.email }}</a>
+    </ng-template>
+
+    <!-- Cart -->
+    <div class="cart-container">
+      <a routerLink="/cart">
+        <div *ngIf="isProductOnCart()" class="products-counter small-price">
+          {{ getTotalProducts() }}
+        </div>
+        <img
+          class="desktop-cart-icon"
+          src="../../../assets/icons/icon_shopping_cart.svg"
+          alt=""
+        />
+      </a>
+    </div>
+  </div>
+
+  <!-- ************************************ -->
+</header>

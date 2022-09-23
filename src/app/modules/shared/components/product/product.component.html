@@ -1,0 +1,59 @@
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<div class="product-card">
+  <!-- ************************************************ -->
+  <!-- ************************************************ -->
+  <!-- Product image -->
+
+  <app-img
+    [routerLink]="['/product', product.id]"
+    [imageChange]="product.images[0]"
+  ></app-img>
+
+  <!-- ************************************************ -->
+  <!-- ************************************************ -->
+
+  <div class="info-container">
+    <!-- ************************************ -->
+    <!-- Product info -->
+
+    <div class="price-container">
+      <h4 [routerLink]="['/product', product.id]" class="price medium-price">
+        Price: {{ product.price | currency: "USD" }}
+      </h4>
+      <p class="price medium-price">Tax: {{ product.tax | currency: "USD" }}</p>
+      <p [routerLink]="['/product', product.id]" class="title small-body">
+        {{ product.title }}
+      </p>
+    </div>
+
+    <!-- ************************************ -->
+    <!-- Cart icon -->
+
+    <img
+      class="add-cart-icon"
+      src="../../../assets/icons/bt_add_to_cart.svg"
+      (click)="addProductToCart()"
+      *ngIf="!isProductAddedToShoppingList(); else addedIcon"
+    />
+
+    <ng-template #addedIcon>
+      <img
+        class="add-cart-icon"
+        src="../../../assets/icons/bt_added_to_cart.svg"
+        (click)="removeProductToCart()"
+      />
+    </ng-template>
+
+    <!-- ************************************ -->
+  </div>
+
+  <!-- ************************************************ -->
+  <!-- ************************************************ -->
+</div>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
