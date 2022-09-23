@@ -87,6 +87,7 @@ li,
 span {
   font-family: "Roboto", sans-serif;
   font-size: var(--medium-font-size);
+  color: var(--dark);
 }
 
 /* ********************************************** */
