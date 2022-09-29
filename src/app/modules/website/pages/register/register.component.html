@@ -1,12 +1,119 @@
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- Header -->
+
+<div class="header">
+  <app-header></app-header>
+</div>
+
+<div class="dummy-header">
+  <app-dummy-header></app-dummy-header>
+</div>
+
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- register Page container -->
+
 <div class="register-page-container limits full-padding">
-  <button class="btn btn-secondary" (click)="createCustomerUser()">
-    Create Customer
+  <!-- ******************************************************************** -->
+  <!-- ******************************************************************** -->
+  <!-- ******************************************************************** -->
+  <!-- register container -->
+
+  <section class="register-container">
+    <div class="close-container">
+      <img
+        class="close-icon"
+        src="../../../../../assets/icons/icon_close.png"
+        routerLink="/home"
+      />
+    </div>
+
+    <!-- ****************************** -->
+    <!-- ****************************** -->
+    <!-- Form container -->
+
+    <div class="form-container">
+      <!-- ****************************** -->
+      <!-- ****************************** -->
+      <!-- Logo -->
+
+      <img class="logo" src="../../../../../assets/logos/logo_yard_sale.svg" />
+
+      <!-- ****************************** -->
+      <!-- ****************************** -->
+      <!-- Register title -->
+
+      <h2 class="medium-title">Create account</h2>
+
+      <!-- ****************************** -->
+      <!-- ****************************** -->
+      <!-- Form -->
+
+      <form class="form">
+        <!-- ****************************** -->
+        <!-- ****************************** -->
+        <!-- Name -->
+
+        <div class="field-container">
+          <label class="small-body" for="name">Name</label>
+          <input
+            class="input medium-body"
+            type="text"
+            id="name"
+            [formControl]="name"
+            placeholder="Your name here"
+          />
+        </div>
+
+        <!-- ****************************** -->
+        <!-- ****************************** -->
+        <!-- Email -->
+
+        <div class="field-container">
+          <label class="small-body" for="email">Email address</label>
+          <input
+            class="input medium-body"
+            type="text"
+            id="email"
+            [formControl]="email"
+            placeholder="example@mail.com"
+          />
+        </div>
+
+        <!-- ****************************** -->
+        <!-- ****************************** -->
+        <!-- Password -->
+
+        <div class="field-container">
+          <label class="small-body" for="password">Password</label>
+          <input
+            class="input medium-body"
+            type="password"
+            id="password"
+            [formControl]="password"
+            placeholder="********"
+          />
+        </div>
+
+        <!-- ****************************** -->
+        <!-- ****************************** -->
+      </form>
+    </div>
+  </section>
+
+  <!-- ******************************************************************** -->
+  <!-- ******************************************************************** -->
+  <!-- ******************************************************************** -->
+  <!-- register Button -->
+
+  <button
+    type="button"
+    class="register-btn btn btn-primary"
+    routerLink="/register"
+  >
+    Create
   </button>
-  <button class="btn btn-secondary" (click)="createAdminUser()">
-    Create Admin
-  </button>
-  <button class="btn btn-secondary" (click)="getAllUsers()">
-    Get all users
-  </button>
-  <button class="btn btn-primary" routerLink="/login"><a>Login</a></button>
 </div>

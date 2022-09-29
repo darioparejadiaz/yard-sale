@@ -1,0 +1,23 @@
+<div *ngIf="product" class="product-card container-limit">
+  <div class="product-info-container">
+    <div class="img-container">
+      <app-img
+        [routerLink]="['/product', product.id]"
+        [imageChange]="product.images[0]"
+        [isCartImage]="true"
+      ></app-img>
+    </div>
+    <h3 class="small-body">{{ product.title }}</h3>
+  </div>
+
+  <div class="price-container">
+    <span class="medium-price price">{{
+      product.price | currency: "USD"
+    }}</span>
+    <img
+      class="close-icon"
+      src="../../../../../assets/icons/icon_close.png"
+      (click)="removeProduct()"
+    />
+  </div>
+</div>

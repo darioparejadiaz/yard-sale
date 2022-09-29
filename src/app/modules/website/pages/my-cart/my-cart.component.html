@@ -1,3 +1,44 @@
-<div class="cart-page-container limits full-padding">
-  <h2 class="large-title">Cart</h2>
+<!-- ******************************************************************* -->
+<!-- ******************************************************************* -->
+<!-- ******************************************************************* -->
+<!-- Header -->
+
+<app-header></app-header>
+<app-dummy-header></app-dummy-header>
+
+<!-- ******************************************************************* -->
+<!-- ******************************************************************* -->
+<!-- ******************************************************************* -->
+<!-- Cart page -->
+
+<div class="cart-page-container full-padding limits">
+  <!-- *********************************** -->
+  <!-- *********************************** -->
+  <!-- Product list -->
+
+  <div *ngIf="products.length !== 0; else emptyMsg" class="list-container">
+    <ul class="products-list-container">
+      <li *ngFor="let product of products" class="product-item container-limit">
+        <app-cart-product
+          [product]="product"
+          (deleteProduct)="removeProduct($event)"
+        ></app-cart-product>
+      </li>
+    </ul>
+
+    <div class="checkout-container vertical-padding">
+      <div class="price-container container-limit">
+        <span class="small-title">Total</span>
+        <span class="medium-price">{{ totalPrice | currency: "USD" }}</span>
+      </div>
+      <button class="btn btn-primary checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <!-- *********************************** -->
+  <!-- *********************************** -->
+
+  <ng-template #emptyMsg>
+    <h2 class="large-title">There is no products selected</h2>
+  </ng-template>
 </div>

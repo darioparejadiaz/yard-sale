@@ -3,8 +3,9 @@
 <!-- *************************************************************** -->
 
 <img
-  [class.product-img]="!isDetailImage"
+  [class.product-img]="isProductImage"
   [class.detail-img]="isDetailImage"
+  [class.cart-img]="isCartImage"
   [src]="src"
   (error)="imgError()"
   *ngIf="src; else emptyImg"
@@ -14,8 +15,9 @@
 
 <ng-template #emptyImg>
   <img
-    [class.product-img]="!isDetailImage"
+    [class.product-img]="isProductImage"
     [class.detail-img]="isDetailImage"
+    [class.cart-img]="isCartImage"
     [src]="emptyImage"
   />
 </ng-template>

@@ -1,8 +1,11 @@
+<app-header></app-header>
+<app-dummy-header></app-dummy-header>
+
 <!-- ************************************************************************************** -->
 <!-- ************************************************************************************** -->
 <!-- ************************************************************************************** -->
 
-<div *ngIf="product" class="product-page-container limits">
+<div *ngIf="product" class="product-page-container limits full-padding">
   <!-- ******************************************** -->
   <!-- ******************************************** -->
   <!-- Close Icon -->
@@ -35,16 +38,19 @@
 
     <div class="info-container">
       <!-- ************************ -->
+      <!-- Price -->
 
       <h4 class="price medium-price">
         {{ product.price | currency: "USD" }}
       </h4>
 
       <!-- ************************ -->
+      <!-- Product title -->
 
       <p class="title medium-body">{{ product.title }}</p>
 
       <!-- ************************ -->
+      <!-- Product description -->
 
       <p class="description medium-body">
         {{ product.description }}
@@ -52,18 +58,22 @@
 
       <!-- ************************ -->
       <!-- ************************ -->
+      <!-- Add to cart Button -->
 
       <button
         *ngIf="!isProductAddedToShoppingList(); else removeBtn"
-        class="btn btn-primary large-body"
+        class="detail-btn btn btn-primary large-body"
         (click)="addProductToShoppingList(product)"
       >
         <img src="../../../assets/icons/icon_shopping_cart.svg" /> Add to cart
       </button>
 
+      <!-- ************************ -->
+      <!-- Remove Button -->
+
       <ng-template #removeBtn>
         <button
-          class="btn btn-secondary large-body"
+          class="detail-btn btn btn-secondary large-body"
           (click)="removeProductToShoppingList(product)"
         >
           Remove product

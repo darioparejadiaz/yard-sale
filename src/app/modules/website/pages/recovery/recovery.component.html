@@ -1,1 +1,68 @@
-<p>recovery works!</p>
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- Header -->
+
+<div class="header">
+  <app-header></app-header>
+</div>
+
+<div class="dummy-header">
+  <app-dummy-header></app-dummy-header>
+</div>
+
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- Login Page container -->
+
+<div class="recovery-page-container limits full-padding">
+  <div class="elements-container">
+    <!-- ************************************ -->
+    <!-- ************************************ -->
+    <!-- Logo -->
+
+    <img class="logo" src="../../../../../assets/logos/logo_yard_sale.svg" />
+
+    <!-- ************************************ -->
+    <!-- ************************************ -->
+    <!-- Recovery info -->
+
+    <div class="recovery-info">
+      <h2 class="large-title">Password recovery</h2>
+      <p class="large-body">
+        Inform the email address used to create your account
+      </p>
+    </div>
+
+    <!-- ************************************ -->
+    <!-- ************************************ -->
+    <!-- Form -->
+
+    <form class="form">
+      <!-- *************************** -->
+      <!-- Email Field -->
+      <div class="field-container">
+        <label class="small-title" for="email">Email address</label>
+        <input
+          class="medium-body input"
+          type="text"
+          id="email"
+          [formControl]="email"
+          placeholder="example@mail.com"
+        />
+      </div>
+
+      <!-- *************************** -->
+      <!-- Submit button -->
+
+      <button class="btn btn-primary submit-btn" type="button">Submit</button>
+    </form>
+
+    <!-- ************************************ -->
+    <!-- ************************************ -->
+    <!-- Login link -->
+
+    <a class="link-primary" routerLink="/login">Back to login</a>
+  </div>
+</div>

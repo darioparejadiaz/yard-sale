@@ -19,7 +19,6 @@
     <img
       class="mobile-logo-icon"
       src="../../../assets/logos/logo_yard_sale.svg"
-      alt=""
     />
   </a>
 
@@ -33,7 +32,6 @@
       <img
         class="mobile-cart-icon"
         src="../../../assets/icons/icon_shopping_cart.svg"
-        alt=""
       />
     </a>
   </div>
@@ -57,7 +55,7 @@
   </div>
 
   <!-- ************************************ -->
-  <h2 class="category-title">CATEGORIES</h2>
+  <h2 class="category-title medium-title">CATEGORIES</h2>
   <div class="links-container">
     <!-- ************************************ -->
     <!-- ************************************ -->
@@ -66,10 +64,18 @@
     <div class="links">
       <nav>
         <ul class="category-list">
-          <li><a routerLink="/home" (click)="toggleVisibility()">All</a></li>
+          <li>
+            <a
+              class="medium-title"
+              routerLink="/home"
+              (click)="toggleVisibility()"
+              >All</a
+            >
+          </li>
           <li *ngFor="let category of categories">
             <a
-              [routerLink]="['category/', category.id]"
+              class="medium-title"
+              [routerLink]="['/category/', category.id]"
               (click)="toggleVisibility()"
               >{{ category.name }}</a
             >
@@ -96,24 +102,24 @@
     <!-- Login buttons -->
 
     <div class="login-options-links">
-      <button
+      <a
         *ngIf="!user; else logoutBtn"
-        class="btn btn-secondary"
+        class="small-body link-primary"
         (click)="toggleVisibility()"
-        routerLink="/register"
+        routerLink="/login"
       >
         Log in
-      </button>
+      </a>
       <ng-template #logoutBtn>
         <p class="small-body">{{ user?.email }}</p>
-        <button
-          class="btn btn-secondary"
+        <a
+          class="small-body link-primary"
           (click)="toggleVisibility()"
           (click)="logOut()"
           routerLink="/home"
         >
           Log out
-        </button>
+        </a>
       </ng-template>
     </div>
   </div>
@@ -149,7 +155,7 @@
         <li *ngFor="let category of categories">
           <a
             routerLinkActive="active-link"
-            [routerLink]="['category/', category.id]"
+            [routerLink]="['/category/', category.id]"
             >{{ category.name }}</a
           >
         </li>
@@ -164,8 +170,8 @@
 
   <div class="desktop-cart-container">
     <!-- Login -->
-    <a *ngIf="!user; else userName" class="sign-in-link" routerLink="register"
-      >Sign In</a
+    <a *ngIf="!user; else userName" class="sign-in-link" routerLink="/login"
+      >Log In</a
     >
     <ng-template #userName>
       <a class="sign-in-link" routerLink="profile">{{ user?.email }}</a>

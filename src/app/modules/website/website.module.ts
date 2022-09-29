@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { WebsiteRoutingModule } from './website-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -14,6 +15,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { DummyHeaderComponent } from './components/dummy-header/dummy-header.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { CartProductComponent } from './components/cart-product/cart-product.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,15 @@ import { LayoutComponent } from './components/layout/layout.component';
     DummyHeaderComponent,
     ProductDetailComponent,
     LayoutComponent,
+    CartProductComponent,
+    CategoryComponent,
   ],
-  imports: [CommonModule, WebsiteRoutingModule, SharedModule, QuicklinkModule],
+  imports: [
+    CommonModule,
+    WebsiteRoutingModule,
+    SharedModule,
+    QuicklinkModule,
+    ReactiveFormsModule,
+  ],
 })
 export class WebsiteModule {}

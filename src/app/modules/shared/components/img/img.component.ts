@@ -13,42 +13,45 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-img',
   templateUrl: './img.component.html',
-  styleUrls: ['./img.component.css']
+  styleUrls: ['./img.component.css'],
 })
 
 //*************************************************************************************** */
 //*************************************************************************************** */
 //*************************************************************************************** */
 // Component definition
-
 export class ImgComponent {
-
   //******************************************** */
   //******************************************** */
   // Attributes and properties
 
   public src: string = '';
 
+  @Input() isProductImage: boolean = false;
   @Input() isDetailImage: boolean = false;
-  @Input() set imageChange(newImg: string){ this.src = newImg;}
+  @Input() isCartImage: boolean = false;
+  @Input() set imageChange(newImg: string) {
+    this.src = newImg;
+  }
 
-  emptyImage: string = 'https://www.pngitem.com/pimgs/m/504-5040528_empty-profile-picture-png-transparent-png.png';
-  errorImg: string = 'https://assets.website-files.com/5e51c674258ffe10d286d30a/5e532a4c258ffe237b8ef2c1_peep-2.svg';
+  emptyImage: string =
+    'https://www.pngitem.com/pimgs/m/504-5040528_empty-profile-picture-png-transparent-png.png';
+  errorImg: string =
+    'https://assets.website-files.com/5e51c674258ffe10d286d30a/5e532a4c258ffe237b8ef2c1_peep-2.svg';
 
   //******************************************** */
   //******************************************** */
   // Constructor
 
-  constructor() { }
+  constructor() {}
 
   //******************************************** */
   //******************************************** */
   // Methods
 
-  imgError(){
+  imgError() {
     this.src = this.errorImg;
   }
 
   //******************************** */
-
 }

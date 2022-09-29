@@ -6,7 +6,8 @@
 import { Component } from '@angular/core';
 import { UsersService } from 'src/app/modules/shared/services/users.service';
 import { OnExit } from 'src/app/guards/exit.guard';
-import { Observable } from 'rxjs';
+import { Location } from '@angular/common';
+import { FormControl } from '@angular/forms';
 
 //********************************************************************* */
 //********************************************************************* */
@@ -26,9 +27,17 @@ import { Observable } from 'rxjs';
 export class RegisterComponent implements OnExit {
   //****************************** */
   //****************************** */
+  // Attributes and properties
+
+  public name = new FormControl();
+  public email = new FormControl();
+  public password = new FormControl();
+
+  //****************************** */
+  //****************************** */
   // Costructor
 
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService, private location: Location) {}
 
   //****************************** */
   //****************************** */

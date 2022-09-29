@@ -1,6 +1,117 @@
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- Header -->
+
+<div class="header">
+  <app-header></app-header>
+</div>
+
+<div class="dummy-header">
+  <app-dummy-header></app-dummy-header>
+</div>
+
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- ******************************************************************** -->
+<!-- Login Page container -->
+
 <div class="login-page-container limits full-padding">
-  <button class="btn btn-primary" (click)="loginCustomer()">
-    Login Customer
+  <!-- ******************************************************************** -->
+  <!-- ******************************************************************** -->
+  <!-- ******************************************************************** -->
+  <!-- Login container -->
+
+  <section class="login-container">
+    <div class="close-container">
+      <img
+        class="close-icon"
+        src="../../../../../assets/icons/icon_close.png"
+        routerLink="/home"
+      />
+    </div>
+
+    <!-- ****************************** -->
+    <!-- ****************************** -->
+    <!-- Form container -->
+
+    <div class="form-container">
+      <!-- ****************************** -->
+      <!-- ****************************** -->
+      <!-- Logo -->
+
+      <img class="logo" src="../../../../../assets/logos/logo_yard_sale.svg" />
+
+      <!-- ****************************** -->
+      <!-- ****************************** -->
+      <!-- Form -->
+
+      <form class="form">
+        <!-- ****************************** -->
+        <!-- ****************************** -->
+        <!-- Email -->
+
+        <div class="field-container">
+          <label class="small-title" for="email">Email address</label>
+          <input
+            class="input medium-body"
+            type="text"
+            id="email"
+            [formControl]="email"
+            placeholder="example@mail.com"
+          />
+        </div>
+
+        <!-- ****************************** -->
+        <!-- ****************************** -->
+        <!-- Password -->
+
+        <div class="field-container">
+          <label class="small-title" for="password">Password</label>
+          <input
+            class="input medium-body"
+            type="password"
+            id="password"
+            [formControl]="password"
+            placeholder="********"
+          />
+        </div>
+
+        <!-- ****************************** -->
+        <!-- ****************************** -->
+        <!-- Login Button -->
+
+        <button type="button" class="login-btn btn btn-primary">Log in</button>
+
+        <!-- ****************************** -->
+        <!-- ****************************** -->
+      </form>
+
+      <!-- ****************************** -->
+      <!-- ****************************** -->
+      <!-- Forgot Link -->
+
+      <a class="forgot-link small-body link-primary" routerLink="/recovery"
+        >Forgot my password</a
+      >
+    </div>
+  </section>
+
+  <!-- ******************************************************************** -->
+  <!-- ******************************************************************** -->
+  <!-- ******************************************************************** -->
+  <!-- SignUp Button -->
+
+  <button
+    type="button"
+    class="signup-btn btn btn-secondary"
+    routerLink="/register"
+  >
+    Sign up
   </button>
-  <button class="btn btn-primary" (click)="loginAdmin()">Login Admin</button>
+
+  <!-- <button class="btn btn-primary" (click)="loginCustomer()">
+    Login Customer
+  </button> -->
+  <!-- <button class="btn btn-primary" (click)="loginAdmin()">Login Admin</button> -->
 </div>

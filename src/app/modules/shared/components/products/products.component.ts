@@ -81,18 +81,4 @@ export class ProductsComponent {
   public showMoreProducts(): void {
     this.loadMoreProducts.emit();
   }
-
-  //******************************************* */
-  //******************************************* */
-  // Methods
-
-  getTotalProducts(): number {
-    return this.storeService.shoppingList.length;
-  }
-
-  //******************************** */
-
-  getTotalPrice(): number {
-    return this.storeService.totalPrice;
-  }
 }

@@ -1,21 +1,13 @@
-<div class="products-component-container" *ngIf="products.length !== 0">
-  <!-- ************************************************************************************** -->
-  <!-- ************************************************************************************** -->
-  <!-- ************************************************************************************** -->
-  <!-- Create Product -->
-
-  <!-- <div class="create-container">
-  <button class="create btn btn-primary large-body" (click)="createProduct()">
-    Create Product
-  </button>
-</div> -->
-
+<div
+  class="products-component-container limits vertical-padding"
+  *ngIf="products.length !== 0"
+>
   <!-- ************************************************************************************** -->
   <!-- ************************************************************************************** -->
   <!-- ************************************************************************************** -->
   <!-- Products grid -->
 
-  <div class="products-grid limits">
+  <div class="products-grid">
     <app-product
       *ngFor="let product of products"
       [product]="product"
@@ -29,12 +21,10 @@
   <!-- ************************************************************************************** -->
   <!-- Show More products -->
 
-  <div class="show-container">
-    <button
-      class="show btn btn-primary large-body"
-      (click)="showMoreProducts()"
-    >
-      Show more products
-    </button>
-  </div>
+  <button
+    class="show-btn btn btn-primary large-body"
+    (click)="showMoreProducts()"
+  >
+    Show more products
+  </button>
 </div>

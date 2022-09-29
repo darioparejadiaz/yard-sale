@@ -12,6 +12,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { ExitGuard } from 'src/app/guards/exit.guard';
+import { CategoryComponent } from './pages/category/category.component';
 
 const routes: Routes = [
   {
@@ -28,14 +29,8 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
-        path: 'category',
-        loadChildren: () =>
-          import('./pages/category/category.module').then(
-            (m) => m.CategoryModule
-          ),
-        // data: {
-        //   preload: true,
-        // },
+        path: 'category/:id',
+        component: CategoryComponent,
       },
       {
         path: 'product/:id',

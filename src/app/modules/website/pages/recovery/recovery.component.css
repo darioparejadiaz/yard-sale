@@ -1,0 +1,133 @@
+/* ********************************************************* */
+/* ********************************************************* */
+/* ********************************************************* */
+/* Header */
+
+.header {
+  display: none;
+}
+
+.dummy-header {
+  display: none;
+}
+
+/* ********************************************************* */
+/* ********************************************************* */
+/* ********************************************************* */
+
+.elements-container {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+/* ************************ */
+/* ************************ */
+
+.logo {
+  width: 150px;
+  margin-top: 63px;
+  margin-bottom: 84px;
+}
+
+/* ************************ */
+/* ************************ */
+/* Recovery-info */
+
+.recovery-info {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.recovery-info h2 {
+  margin-bottom: 12px;
+}
+
+.recovery-info p {
+  width: 265px;
+}
+
+/* ************************ */
+/* ************************ */
+/* Form */
+
+.form {
+  width: 100%;
+}
+
+/* *********************** */
+
+.field-container {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  margin-bottom: 32px;
+}
+
+/* *********************** */
+
+.field-container label {
+  width: 100%;
+  max-width: 323px;
+}
+
+/* *********************** */
+
+.field-container input {
+  width: 100%;
+}
+
+/* *********************** */
+
+.submit-btn {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+/* ********************************************************* */
+/* ********************************************************* */
+/* ********************************************************* */
+/* Media queries */
+
+@media screen and (min-width: 900px) {
+  /* *********************** */
+
+  .header {
+    display: block;
+  }
+
+  /* *********************** */
+
+  .recovery-page-container {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+  }
+
+  .elements-container {
+    gap: 20px;
+  }
+
+  /* *********************** */
+
+  .logo {
+    display: none;
+  }
+
+  /* *********************** */
+
+  .recovery-info,
+  .submit-btn {
+    margin-bottom: 0;
+  }
+}
+
+/* *********************** */
+/* *********************** */
+
+@media screen and (orientation: landscape) and (min-width: 900px) and (max-height: 599px) {
+  .dummy-header {
+    display: block;
+  }
+}

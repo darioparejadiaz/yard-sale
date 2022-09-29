@@ -7,8 +7,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { StoreService } from 'src/app/modules/shared/services/store.service';
 import { AuthService } from 'src/app/modules/shared/services/auth.service';
-import { switchMap } from 'rxjs/operators';
-import { TokenService } from 'src/app/modules/shared/services/token.service';
 import { Category } from 'src/app/models/category.model';
 import { CategoriesService } from 'src/app/modules/shared/services/categories.service';
 import { User } from 'src/app/models/user.model';
@@ -46,7 +44,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(
     private storeService: StoreService,
     private authService: AuthService,
-    private tokenService: TokenService,
     private categoriesService: CategoriesService
   ) {}
 

@@ -1,0 +1,22 @@
+.product-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-info-container,
+.price-container {
+  display: flex;
+  align-items: center;
+}
+
+.img-container {
+  cursor: pointer;
+}
+
+.price {
+  margin-right: 12px;
+}
+
+.close-icon {
+  cursor: pointer;
+}
