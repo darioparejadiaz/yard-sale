@@ -5,6 +5,7 @@
 
 <header class="header-container mobile-grid-container limits">
   <!-- ************************************ -->
+  <!-- Hamburguer icon / menu -->
 
   <img
     class="mobile-menu-icon"
@@ -14,6 +15,7 @@
   />
 
   <!-- ************************************ -->
+  <!-- Logo / Link to home -->
 
   <a routerLink="/home">
     <img
@@ -23,6 +25,7 @@
   </a>
 
   <!-- ************************************ -->
+  <!-- Cart icon -->
 
   <div class="cart-container">
     <a routerLink="/cart">
@@ -46,6 +49,7 @@
 
 <div class="side-menu" [class.active-menu]="isVisible">
   <!-- ************************************ -->
+  <!-- Close icon-button -->
 
   <div class="close-icon-container">
     <img
@@ -138,6 +142,7 @@
   <!-- Logo icon -->
 
   <div class="desktop-menu-container">
+    <!-- logo / link to home -->
     <a routerLink="/home">
       <img
         class="desktop-logo-icon"
@@ -174,7 +179,7 @@
       >Log In</a
     >
     <ng-template #userName>
-      <a class="sign-in-link" routerLink="profile">{{ user?.email }}</a>
+      <a class="sign-in-link" routerLink="/profile">{{ user?.email }}</a>
     </ng-template>
 
     <!-- Cart -->

@@ -52,18 +52,18 @@
       <!-- ****************************** -->
       <!-- Form -->
 
-      <form class="form">
+      <form class="form" [formGroup]="form">
         <!-- ****************************** -->
         <!-- ****************************** -->
         <!-- Name -->
 
         <div class="field-container">
-          <label class="small-body" for="name">Name</label>
+          <label class="small-title" for="name">Name</label>
           <input
             class="input medium-body"
             type="text"
             id="name"
-            [formControl]="name"
+            formControlName="name"
             placeholder="Your name here"
           />
         </div>
@@ -73,12 +73,12 @@
         <!-- Email -->
 
         <div class="field-container">
-          <label class="small-body" for="email">Email address</label>
+          <label class="small-title" for="email">Email address</label>
           <input
             class="input medium-body"
             type="text"
             id="email"
-            [formControl]="email"
+            formControlName="email"
             placeholder="example@mail.com"
           />
         </div>
@@ -88,12 +88,12 @@
         <!-- Password -->
 
         <div class="field-container">
-          <label class="small-body" for="password">Password</label>
+          <label class="small-title" for="password">Password</label>
           <input
             class="input medium-body"
             type="password"
             id="password"
-            [formControl]="password"
+            formControlName="password"
             placeholder="********"
           />
         </div>
@@ -112,7 +112,8 @@
   <button
     type="button"
     class="register-btn btn btn-primary"
-    routerLink="/register"
+    (click)="createUser()"
+    routerLink="/login"
   >
     Create
   </button>

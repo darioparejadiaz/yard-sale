@@ -4,3 +4,8 @@
   justify-items: center;
   margin-top: 20px;
 }
+
+.btn-cms,
+.btn-logout {
+  width: 100%;
+}

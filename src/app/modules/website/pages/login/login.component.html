@@ -46,7 +46,7 @@
       <!-- ****************************** -->
       <!-- Form -->
 
-      <form class="form">
+      <form class="form" [formGroup]="form" (ngSubmit)="login()">
         <!-- ****************************** -->
         <!-- ****************************** -->
         <!-- Email -->
@@ -57,7 +57,7 @@
             class="input medium-body"
             type="text"
             id="email"
-            [formControl]="email"
+            formControlName="email"
             placeholder="example@mail.com"
           />
         </div>
@@ -72,7 +72,7 @@
             class="input medium-body"
             type="password"
             id="password"
-            [formControl]="password"
+            formControlName="password"
             placeholder="********"
           />
         </div>
@@ -81,7 +81,7 @@
         <!-- ****************************** -->
         <!-- Login Button -->
 
-        <button type="button" class="login-btn btn btn-primary">Log in</button>
+        <button type="submit" class="login-btn btn btn-primary">Log in</button>
 
         <!-- ****************************** -->
         <!-- ****************************** -->

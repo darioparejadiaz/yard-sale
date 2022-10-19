@@ -6,8 +6,8 @@
 import { Component } from '@angular/core';
 import { UsersService } from 'src/app/modules/shared/services/users.service';
 import { OnExit } from 'src/app/guards/exit.guard';
-import { Location } from '@angular/common';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { switchMap } from 'rxjs/operators';
 
 //********************************************************************* */
 //********************************************************************* */
@@ -29,48 +29,43 @@ export class RegisterComponent implements OnExit {
   //****************************** */
   // Attributes and properties
 
-  public name = new FormControl();
-  public email = new FormControl();
-  public password = new FormControl();
+  public form = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
 
   //****************************** */
   //****************************** */
   // Costructor
 
-  constructor(private usersService: UsersService, private location: Location) {}
+  constructor(private usersService: UsersService) {}
 
   //****************************** */
   //****************************** */
   // Events
 
-  public createCustomerUser(): void {
-    this.usersService
-      .createUser({
-        name: 'Dario',
-        email: 'dario@mail.com',
-        password: '1234',
-        // role: 'customer',
-      })
-      .subscribe((user) => console.log(user));
-  }
+  public createUser(): void {
+    const name = this.form.value.name;
+    const email = this.form.value.email;
+    const password = this.form.value.password;
 
-  //********************** */
-
-  public createAdminUser(): void {
-    this.usersService
-      .createUser({
-        name: 'Dario-admin',
-        email: 'dario-admin@mail.com',
-        password: '1234',
-        // role: 'admin',
-      })
-      .subscribe((user) => console.log(user));
-  }
-
-  //********************** */
-
-  public getAllUsers() {
-    this.usersService.getUsers().subscribe((users) => console.log(users));
+    if (
+      typeof name === 'string' &&
+      typeof email === 'string' &&
+      typeof password === 'string'
+    ) {
+      this.usersService
+        .createUser({
+          name: name,
+          email: email,
+          password: password,
+        })
+        .pipe(switchMap(() => this.usersService.getUsers()))
+        .subscribe((user) => console.log(user));
+    } else {
+      console.log('Invalid register');
+    }
   }
 
   //****************************** */

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/modules/shared/services/auth.service';
 import { switchMap } from 'rxjs';
 import { Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 //****************************************************************************** */
 //****************************************************************************** */
@@ -29,8 +29,10 @@ export class LoginComponent {
   //******************************** */
   // Attributes and properties
 
-  public email = new FormControl();
-  public password = new FormControl();
+  public form = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
 
   //******************************** */
   //******************************** */
@@ -42,9 +44,9 @@ export class LoginComponent {
   //******************************** */
   // Events
 
-  public loginCustomer() {
+  public loginCustomer(name: string, pass: string) {
     this.authService
-      .login('dario@mail.com', '1234')
+      .login(name, pass)
       .pipe(switchMap(() => this.authService.getCustomerProfile()))
       .subscribe();
     this.router.navigate(['/home']);
@@ -52,13 +54,29 @@ export class LoginComponent {
 
   //**************************** */
 
-  public loginAdmin() {
+  public loginAdmin(name: string, pass: string) {
     this.authService
-      .login('dario-admin@mail.com', '1234')
+      .login(name, pass)
       .pipe(switchMap(() => this.authService.getAdminProfile()))
       .subscribe();
+
     this.router.navigate(['/home']);
   }
 
   //**************************** */
+
+  public login() {
+    const email = this.form.value.email;
+    const password = this.form.value.password;
+
+    if (typeof email === 'string' && typeof password === 'string') {
+      if (email.includes('admin')) {
+        console.log('entro');
+        this.loginAdmin(email, password);
+      } else {
+        console.log('customer');
+        this.loginCustomer(email, password);
+      }
+    }
+  }
 }

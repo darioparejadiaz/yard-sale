@@ -2,4 +2,4 @@
 
 ## Yard sale page link:
 
-https://eloquent-frangollo-af126d.netlify.app/
+https://dp-yard-sale.netlify.app/home
